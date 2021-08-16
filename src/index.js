@@ -38,6 +38,17 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
+    var words = ''
+  expr.split(" ").forEach(cur => {
+      if(cur === ""){
+          words += " "
+      }else{
+          if(MORSE_TABLE[cur]){
+              words += MORSE_TABLE[cur]
+          }
+      } 
+  });
+  return (words.split("  ")).join(" ")
     // write your solution here
 }
 
